@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Columns in <code>{{ database }}.{{ schema }}.{{ table }}</code></h2>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% elif columns %}
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for col in columns %}
+                    <tr>
+                        <td>{{ col.name }}</td>
+                        <td>{{ col.type }}</td>
+                        <td>{{ col.description or '—' }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No columns found.</p>
+    {% endif %}
+
+    <a class="btn btn-primary mt-4" href="/summary/{{ database }}/{{ schema }}/{{ table }}">View Table Summary →</a>
+
+{% endblock %}

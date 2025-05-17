@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="get" onsubmit="event.preventDefault(); window.location.href = '/schemas/' + document.getElementById('database').value;">
+        <label for="database" class="form-label">Enter Database Name:</label>
+        <input type="text" class="form-control" id="database" name="database" placeholder="e.g. LONG_TAIL_COMPANIONS">
+        <button type="submit" class="btn btn-primary mt-3">View Schemas</button>
+    </form>
+{% endblock %}

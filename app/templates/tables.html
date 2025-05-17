@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Tables in <code>{{ database }}.{{ schema }}</code></h2>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% elif tables %}
+        <ul class="list-group mt-3">
+            {% for table in tables %}
+                <li class="list-group-item">
+                     <a href="/columns/{{ database }}/{{ schema }}/{{ table }}">{{ table }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tables found.</p>
+    {% endif %}
+
+    <a class="btn btn-secondary mt-4" href="/schemas/{{ database }}">← Back to Schemas</a>
+{% endblock %}

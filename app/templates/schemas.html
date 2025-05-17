@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Schemas in <code>{{ database }}</code></h2>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% elif schemas %}
+        <ul class="list-group mt-3">
+    {% for schema in schemas %}
+        <li class="list-group-item">
+            <a href="/tables/{{ database }}/{{ schema }}">{{ schema }}</a>
+        </li>
+    {% endfor %}
+        </ul>
+    {% else %}
+        <p>No schemas found.</p>
+    {% endif %}
+{% endblock %}
