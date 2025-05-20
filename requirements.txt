@@ -1,6 +1,20 @@
 fastapi
-uvicorn
+uvicorn[standard]
 jinja2
-python-multipart
-snowflake-connector-python
 python-dotenv
+python-multipart
+
+# Snowflake DB access via SQLAlchemy
+sqlalchemy
+snowflake-connector-python
+snowflake-sqlalchemy
+
+# Caching
+cachetools
+
+# Testing
+pytest
+requests
+
+# Optional logging support
+loguru

@@ -28,6 +28,13 @@
         <p>No columns found.</p>
     {% endif %}
 
-    <a class="btn btn-primary mt-4" href="/summary/{{ database }}/{{ schema }}/{{ table }}">View Table Summary →</a>
+    <div class="row mt-4">
+        <div class="col text-start">
+            <a class="btn btn-secondary" href="/tables/{{ database }}/{{ schema }}">← View Tables</a>
+        </div>
+        <div class="col text-end">
+            <a class="btn btn-primary" href="/summary/{{ database }}/{{ schema }}/{{ table }}">View Table Summary →</a>
+        </div>
+    </div>
 
 {% endblock %}
