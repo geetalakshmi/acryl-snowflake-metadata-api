@@ -28,35 +28,41 @@ This project is a lightweight FastAPI + Jinja2 web application to explore metada
 
 ## 🔧 Setup Instructions
 
-### 1️⃣ Clone the repo
-
+### 1 Clone the repo
 ```bash
 git clone https://github.com/your-username/acryl-snowflake-metadata-api.git
 cd acryl-snowflake-metadata-api
-
-Create and activate a virtual environment
+```
+### 2 Create and activate a virtual environment
+```bash
 python -m venv venv
 source venv/bin/activate    # On Windows: venv\Scripts\activate
-
-Install dependencies
+```
+### 3 Install dependencies
+```bash
 pip install -r requirements.txt
-
-Create a .env file with Snowflake credentials
+```
+### 4 Create a .env file with Snowflake credentials
+```bash
 SNOWFLAKE_USER=your_user
 SNOWFLAKE_PASSWORD=your_password
 SNOWFLAKE_ACCOUNT=your_account
 SNOWFLAKE_ROLE=your_role
 SNOWFLAKE_WAREHOUSE=your_warehouse
 SNOWFLAKE_DATABASE=your_database
-
-Run the App
+```
+### 5 Run the App
+```bash
 uvicorn app.main:app --reload
 http://127.0.0.1:8000
-
-Running Tests
+```
+### 6 Running Tests
+```bash
 pytest tests/ -v
+```
 
-Folder Structure
+### 7 Folder Structure
+```bash
 acryl-snowflake-metadata-api/
 ├── app/
 │   ├── main.py
@@ -70,3 +76,4 @@ acryl-snowflake-metadata-api/
 ├── .env
 ├── requirements.txt
 └── README.md
+```
